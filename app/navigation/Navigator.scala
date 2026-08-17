@@ -22,6 +22,7 @@ import models.BusinessType.Soleproprietor
 import models.CorrespondenceChangeAddrOption.*
 import pages.*
 import pages.partner.*
+import pages.partnerdetails.PartnerDetailsContactNumberPage
 import play.api.mvc.Call
 
 import javax.inject.{Inject, Singleton}
@@ -126,6 +127,8 @@ class Navigator @Inject() () {
       _ => controllers.partner.routes.PartnerEmailAddressController.onPageLoad()
     case BusinessUKAddrScreenerPage =>
       userAnswers => navigateBusinessUKAddrScreenerPage()(userAnswers)
+    case PartnerDetailsContactNumberPage(index) =>
+      _ => controllers.partner.routes.PartnerContactDetailsController.onPageLoad()
     case PartnerDetailsRemoveEmailAddressYesNoPage(index) =>
       userAnswers => navigatePartnerRemoveEmailYesNoPage(userAnswers, index)
 
