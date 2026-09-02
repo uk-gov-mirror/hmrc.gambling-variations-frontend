@@ -32,6 +32,17 @@ class FrontendAppConfig @Inject() (configuration: Configuration) {
   lazy val addressLookupFrontendBaseUrl: String =
     configuration.get[Service]("microservice.services.address-lookup-frontend").baseUrl
 
+  lazy val addressLookupFrontendConfigOrigins: String = {
+    val configKeys = Seq("protocol", "host", "port")
+
+    configKeys
+      .map { configKey =>
+        val path = s"microservice.services.address-lookup-frontend.$configKey"
+        s"$configKey=${configuration.underlying.getValue(path).origin().description()}"
+      }
+      .mkString(", ")
+  }
+
   lazy val addressLookupHomeNavHref: String =
     configuration.get[String]("address-lookup.home-nav-href")
 
