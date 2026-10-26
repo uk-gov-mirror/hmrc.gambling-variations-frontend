@@ -541,3 +541,6 @@ dateOfIncorporation.error.required.two = cy: Date of incorporation must include 
 dateOfIncorporation.error.required = cy: Date of incorporation must include a {0}
 dateOfIncorporation.error.invalid = cy: Date of incorporation must be a real date
 dateOfIncorporation.change.hidden = cy: DateOfIncorporation
+controllingBodyRemoveVATRegistrationNumber.title = cy: Are you sure you want to remove this controlling body’s VAT registration number?
+controllingBodyRemoveVATRegistrationNumber.heading = cy: Are you sure you want to remove {0} as this controlling body’s VAT registration number?
+controllingBodyRemoveVATRegistrationNumber.error.required = cy: Select yes if you want to remove this controlling body’s VAT registration number
