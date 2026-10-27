@@ -60,6 +60,8 @@ class Navigator @Inject() () {
       userAnswers => navigateControllingBodyIsUkIncorporatedPage(userAnswers)
     case ControllingBodyCrnPage =>
       _ => routes.IndexController.onPageLoad() // TODO: Redirect to CB-UTR when the controlling body journey is built.
+    case ControllingBodyUtrPage =>
+      _ => controllers.controllingbody.routes.ControllingBodyVATScreenerController.onPageLoad()
     case RemoveTradeNamePage =>
       _ => controllers.businessname.routes.CheckBusinessNameController.onPageLoad()
     case BusinessNamePage =>
